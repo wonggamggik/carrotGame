@@ -23,3 +23,20 @@ button {
   padding: 0;
   border: 0px;
 }
+
+body {
+  background-color: var(--color-primary);
+  min-width: 1400px;
+}
+
+#fullScreen {
+  position: relative;
+  margin: auto;
+  top: 100px;
+  width: 60%;
+  height: 60vh;
+  border-radius: 45px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../images/background.png");
+}
