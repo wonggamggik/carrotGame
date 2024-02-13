@@ -8,6 +8,7 @@
 제한 시간 내에 당근을 모두 선택하면 이기는 게임<br> 벌레를 선택시 혹은 시간이 모두 지나면 패배한다.
 <h3> 예시 이미지<h3>
 <img src="images/example.png">
+<img src="images/example2.png">
 
 <h2> 게임 클래스 및 함수 </h2>
 
