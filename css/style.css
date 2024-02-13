@@ -30,6 +30,7 @@ button {
 body {
   background-color: var(--color-primary);
   min-width: 1400px;
+  min-height: 440px;
   user-select: none;
 }
 
@@ -56,7 +57,7 @@ body {
   transform: translate(-50%);
 }
 
-.button__start {
+.button__common {
   position: relative;
   width: 100%;
   height: 100%;
@@ -110,4 +111,48 @@ body {
 .game__count-text {
   position: relative;
   font-size: 2rem;
+}
+
+/* filed */
+.game__field {
+  position: absolute;
+  width: 100%;
+  height: 45%;
+  bottom: 0;
+}
+
+.game__field-carrot,
+.game__field-bug {
+}
+
+/* result */
+.game__result {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  width: 300px;
+  height: 125px;
+  border-radius: 30px;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+}
+
+.game__result > .game__button {
+  left: 0;
+  transform: translate(0);
+}
+
+.button__restart {
+  position: relative;
+  font-size: 20px;
+}
+
+.result__text {
+  color: var(--color-white);
+  font-size: 2rem;
+  margin: 0 0 10px 0;
 }
