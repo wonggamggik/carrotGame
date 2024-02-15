@@ -1,16 +1,3 @@
-//  Class 모음
-// class onGame {
-//   constructor(status) {
-//     this.status = status;
-//   }
-
-//   statusChange() {
-//     this.status = !this.status;
-//   }
-// }
-
-// class resultGame {}
-
 class ingameInform {
   constructor(carrotCount, bugCount, time) {
     this.carrotCount = carrotCount;
@@ -44,7 +31,6 @@ class fieldMaker {
     for (let i = 0; i < this.count; i++) {
       const objImg = document.createElement("img");
       field.appendChild(objImg);
-      objImg.id = i;
       objImg.classList.add(this.obj);
       const objWidth = objImg.clientWidth;
       const clientHeight = objImg.clientHeight;
@@ -52,7 +38,6 @@ class fieldMaker {
       objImg.style.top = Math.random() * (fieldHeight - clientHeight) + "px";
 
       objImg.addEventListener("click", () => {
-        console.log("delete");
         field.removeChild(objImg);
       });
     }
@@ -63,9 +48,6 @@ class fieldMaker {
     field.innerHTML = "";
   }
 }
-
-// Game Status
-// const ongame = new onGame(false);
 
 // GameInform
 const inform = new ingameInform(10, 10, 10);
@@ -96,6 +78,7 @@ timerText.innerText = `${String(min).padStart(2, "0")}:${String(sec).padStart(
 )}`;
 
 // makeCarrot and makeBug
+const field = document.querySelector(".game__field");
 const carrot = document.querySelector(".game__field-carrot");
 const bug = document.querySelector(".game__field-bug");
 const carrotObj = new fieldMaker("game__field-carrot", 10);
@@ -132,6 +115,12 @@ const timeViwer = () => {
   }
 };
 
+field.addEventListener("click", (e) => {
+  if (e.target.classList.value === "game__field-carrot") {
+    playSoundEffect(audio__carrot);
+  }
+});
+
 // 게임 시작 버튼을 눌렀을 시 작동하는 기능들
 gameButton.addEventListener("click", (e) => {
   // 음악 재생 or 종료
@@ -161,8 +150,6 @@ gameButton.addEventListener("click", (e) => {
     carrotObj.removeObj();
     bugObj.removeObj();
   }
-
-  //
 });
 
 // function 모음

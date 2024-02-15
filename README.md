@@ -35,7 +35,7 @@
     > 게임 시작 버튼 클릭 이후에 실행
 
     - 🟥당근 선택 시 당근의 개수 view 1개씩 감소<br>
-    - (+)🟥당근 터치 시 음악 실행 playMusic()#playPickCarrot()
+    - (+)☑️당근 터치 시 음악 실행 playMusic()#playPickCarrot()
 
   - ☑️벌레가 정해진 공간안에 생성 - makeBug()
 
