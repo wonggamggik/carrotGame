@@ -12,13 +12,6 @@
 
 <h2> 게임 클래스 및 함수 </h2>
 
-- 🟥게임 플레이 버튼 관리 - class onGame
-
-  - 🟥게임 시작 버튼을 누를 시 게임 시작 - onStart()
-  - 🟥게임 정지 버튼을 누를 시 게임 종료 - onStop()
-    > 게임 시작 버튼 클릭 이후에 실행<br>
-    > 모두 초기화(onStart() 이전 상태로 전환)
-
 - 🟥게임 결과 - class resultGame
 
   - 🟥게임 승리 - winGame()
@@ -42,7 +35,7 @@
     > 게임 시작 버튼 클릭 이후에 실행<br>
 
     - (+)🟥벌레 터치 시 게임 패배 resultGame()#loseGame()<br>
-    - (+)🟥벌레 터치 시 음악 실행 playMusic()#playPickBug()<br>
+    - (+)☑️벌레 터치 시 음악 실행 playMusic()#playPickBug()<br>
     - (+)🟥벌레 터치 음악 종료 후 패배 음악 실행 playMusic()#playLoseMusic()
 
   - ☑️당근의 개수가 나옴 - viewCarrotCount()
@@ -50,7 +43,7 @@
     > 게임 시작 버튼 클릭 이후에 실행
 
     - (+)🟥0이 되면 게임 승리 resultGame()#winGame()
-    - (+)🟥0이 되면 음악 실행 playMusic()#playWinMusic()
+    - (+)☑️0이 되면 음악 실행 playMusic()#playWinMusic()
 
   - ☑️타이머 시작 - ~~startTimer()~~<br>
     -> JS이해도 부족으로 함수화 및 클래스화 실패

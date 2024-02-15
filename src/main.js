@@ -53,6 +53,30 @@ class fieldMaker {
   }
 }
 
+class resultGame {
+  winGame() {
+    const result = document.querySelector(".game__result");
+    const resultText = document.querySelector(".result__text");
+    result.style.display = "flex";
+    gameButton.style.display = "none";
+    resultText.innerHTML = "YOU WIN 🎉";
+    controlBGM(audio__bg);
+    playSoundEffect(audio__win);
+    clearInterval(timerInterval);
+  }
+
+  loseGame() {
+    const result = document.querySelector(".game__result");
+    const resultText = document.querySelector(".result__text");
+    const restart = document.querySelector(".button__restart");
+    result.style.display = "flex";
+    gameButton.style.display = "none";
+    resultText.innerHTML = "YOU Lose ☔";
+    controlBGM(audio__bg);
+    clearInterval(timerInterval);
+  }
+}
+
 // GameInform
 const inform = new ingameInform(10, 10, 10);
 
@@ -92,6 +116,9 @@ const bugObj = new fieldMaker("game__field-bug", 5);
 const carrotCount = document.querySelector(".game__count-text");
 carrotCount.innerHTML = inform.carrotCount;
 
+// Result
+const result = new resultGame();
+
 const timeViwer = () => {
   time -= 1000;
   min = Math.floor(time / (60 * 1000));
@@ -129,6 +156,16 @@ field.addEventListener("click", (e) => {
     inform.carrotMinus();
     carrotCount.innerHTML = inform.carrotCount;
   }
+  if (e.target.classList.value === "game__field-bug") {
+    playSoundEffect(audio__alert);
+    result.loseGame();
+    field.style.display = "none";
+  }
+
+  if (inform.carrotCount <= 0) {
+    result.winGame();
+    field.style.display = "none";
+  }
 });
 
 // 게임 시작 버튼을 눌렀을 시 작동하는 기능들
@@ -140,6 +177,8 @@ gameButton.addEventListener("click", (e) => {
   if (gameButtonIcon.classList.value.includes("fa-stop")) {
     timerInterval = setInterval(timeViwer, 1000);
   } else {
+    inform.carrotCount = 10;
+    carrotCount.innerHTML = inform.carrotCount;
     clearInterval(timerInterval);
     time = inform.time * 1000;
     min = Math.floor(time / (60 * 1000));

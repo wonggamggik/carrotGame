@@ -143,11 +143,11 @@ button {
   width: 300px;
   height: 125px;
   border-radius: 30px;
+  z-index: 7;
   background-color: rgba(0, 0, 0, 0.7);
   justify-content: space-between;
   flex-direction: column;
   align-items: center;
-  display: flex;
   display: none;
 }
 
