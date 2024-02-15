@@ -12,32 +12,32 @@
 
 <h2> 게임 클래스 및 함수 </h2>
 
-- 🟩게임 플레이 버튼 관리 - class onGame
+- 🟥게임 플레이 버튼 관리 - class onGame
 
-  - 🟩게임 시작 버튼을 누를 시 게임 시작 - onStart()
-  - 🟩게임 정지 버튼을 누를 시 게임 종료 - onStop()
+  - 🟥게임 시작 버튼을 누를 시 게임 시작 - onStart()
+  - 🟥게임 정지 버튼을 누를 시 게임 종료 - onStop()
     > 게임 시작 버튼 클릭 이후에 실행<br>
     > 모두 초기화(onStart() 이전 상태로 전환)
 
-- 🟩게임 결과 - class resultGame
+- 🟥게임 결과 - class resultGame
 
-  - 🟩게임 승리 - winGame()
-  - 🟩게임 패배 - loseGame()
+  - 🟥게임 승리 - winGame()
+  - 🟥게임 패배 - loseGame()
 
-- 🟩게임의 정보 - class ingameInform : carrotCount, bugCount, time
+- 🟥게임의 정보 - class ingameInform : carrotCount, bugCount, time
 
   1. carrotCount: 당근의 개수 지정함
   2. bugCount: 벌레의 개수를 지정함
   3. time: 제한 시간을 지정함
 
-  - 🟩당근이 정해진 공간안에 생성 - makeCarrot()
+  - 🟥당근이 정해진 공간안에 생성 - makeCarrot()
 
     > 게임 시작 버튼 클릭 이후에 실행
 
-    - 🟩당근 선택 시 당근의 개수 view 1개씩 감소<br>
+    - 🟥당근 선택 시 당근의 개수 view 1개씩 감소<br>
     - (+)당근 터치 시 음악 실행 playMusic()#playPickCarrot()
 
-  - 🟩벌레가 정해진 공간안에 생성 - makeBug()
+  - 🟥벌레가 정해진 공간안에 생성 - makeBug()
 
     > 게임 시작 버튼 클릭 이후에 실행<br>
 
@@ -45,24 +45,25 @@
     - (+)벌레 터치 시 음악 실행 playMusic()#playPickBug()<br>
     - (+)벌레 터치 음악 종료 후 패배 음악 실행 playMusic()#playLoseMusic()
 
-  - 🟩당근의 개수가 나옴 - viewCarrotCount()
+  - 🟥당근의 개수가 나옴 - viewCarrotCount()
 
     > 게임 시작 버튼 클릭 이후에 실행
 
     - (+)0이 되면 게임 승리 resultGame()#winGame()
     - (+)0이 되면 음악 실행 playMusic()#playWinMusic()
 
-  - 🟩타이머 시작 - startTimer()
+  - ☑️타이머 시작 - ~~startTimer()~~<br>
+    -> JS이해도 부족으로 함수화 및 클래스화 실패
     > 게임 시작 버튼 클릭 이후에 실행
     - (+)0이 되면 게임 패배 resultGame()#loseGame()
-    - (+)0이 되면 음악 실행 playMusic()#playLoseMusic()
+    - ☑️(+)0이 되면 음악 실행 musicControl(audio)#stopMusic()
 
-- ✅음악 실행 - class musicCotrol : audio
+- ☑️음악 실행 - class musicCotrol : audio
 
 1. audio: 어느 audio 객체가 들어갈 것인지 지정
 
-- ✅게임 진행 음악 실행 - playMusic()
-- ✅게임 패배 시 음악 실행 - stopMusic()
+- ☑️게임 진행 음악 실행 - playMusic()
+- ☑️게임 패배 시 음악 실행 - stopMusic()
 
 <h2> 반성할 점 </h2>
 
@@ -77,3 +78,5 @@
   - backgroud 속성에 대한 이해가 부족함. background를 설정하는 부분에서 많이 해매고 있음
   - JS문법에 대한 이해도 부족함. 각 클래스 별로 코드와 함수를 구성하였지만 솔직히 해당 코드가 맞는지도 모르겠음. 그냥 야매로 짠 것에 불과한 수준. 코드가 더 복잡해진다면 답이 없어질 것
     - JS 공부가 추가적으로 필요함
+  - 기존 코틀린이나 다른 코딩 테스트와 달리 실제 개발에서 하는 것을 하다보니 JS에 대한 이해도가 부족하여 클래스로 만들고 구상하는 능력이 떨어짐. 그렇기에 기존의 계획했던 클래스의 틀과 많이 차이가 나는 상황 발생
+    - JS 공부 및 개발을 계속 할 필요가 있음
