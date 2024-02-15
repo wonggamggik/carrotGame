@@ -30,6 +30,34 @@ class musicControl {
   }
 }
 
+class fieldMaker {
+  constructor(obj, count) {
+    this.obj = obj;
+    this.count = count;
+  }
+  makeObj() {
+    const field = document.querySelector(".game__field");
+    const fieldWidth = field.clientWidth;
+    const fieldHeight = field.clientHeight;
+
+    for (let i = 0; i < this.count; i++) {
+      const objImg = document.createElement("img");
+      field.appendChild(objImg);
+      objImg.id = i;
+      objImg.classList.add(this.obj);
+      const objWidth = objImg.clientWidth;
+      const clientHeight = objImg.clientHeight;
+      objImg.style.left = Math.random() * (fieldWidth - objWidth) + "px";
+      objImg.style.top = Math.random() * (fieldHeight - clientHeight) + "px";
+    }
+  }
+
+  removeObj() {
+    const field = document.querySelector(".game__field");
+    field.innerHTML = "";
+  }
+}
+
 // Game Status
 // const ongame = new onGame(false);
 
@@ -61,10 +89,15 @@ timerText.innerText = `${String(min).padStart(2, "0")}:${String(sec).padStart(
   "0"
 )}`;
 
+// makeCarrot and makeBug
+const carrot = document.querySelector(".game__field-carrot");
+const bug = document.querySelector(".game__field-bug");
+const carrotObj = new fieldMaker("game__field-carrot", 10);
+const bugObj = new fieldMaker("game__field-bug", 5);
+
 const timeViwer = () => {
   time -= 1000;
   min = Math.floor(time / (60 * 1000));
-  console.log(".........", time);
 
   if (sec > 0) {
     sec -= 1;
@@ -109,6 +142,15 @@ gameButton.addEventListener("click", (e) => {
     controlBGM(audio__alert);
     gameButtonIcon.classList.remove("fa-stop");
     gameButtonIcon.classList.add("fa-play");
+  }
+
+  // 게임 필드 관리
+  if (gameButtonIcon.classList.value.includes("fa-stop")) {
+    carrotObj.makeObj();
+    bugObj.makeObj();
+  } else {
+    carrotObj.removeObj();
+    bugObj.removeObj();
   }
 
   //

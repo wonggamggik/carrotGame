@@ -30,33 +30,33 @@
   2. bugCount: 벌레의 개수를 지정함
   3. time: 제한 시간을 지정함
 
-  - 🟥당근이 정해진 공간안에 생성 - makeCarrot()
+  - ☑️당근이 정해진 공간안에 생성 - makeCarrot()
 
     > 게임 시작 버튼 클릭 이후에 실행
 
     - 🟥당근 선택 시 당근의 개수 view 1개씩 감소<br>
-    - (+)당근 터치 시 음악 실행 playMusic()#playPickCarrot()
+    - (+)🟥당근 터치 시 음악 실행 playMusic()#playPickCarrot()
 
-  - 🟥벌레가 정해진 공간안에 생성 - makeBug()
+  - ☑️벌레가 정해진 공간안에 생성 - makeBug()
 
     > 게임 시작 버튼 클릭 이후에 실행<br>
 
-    - (+)벌레 터치 시 게임 패배 resultGame()#loseGame()<br>
-    - (+)벌레 터치 시 음악 실행 playMusic()#playPickBug()<br>
-    - (+)벌레 터치 음악 종료 후 패배 음악 실행 playMusic()#playLoseMusic()
+    - (+)🟥벌레 터치 시 게임 패배 resultGame()#loseGame()<br>
+    - (+)🟥벌레 터치 시 음악 실행 playMusic()#playPickBug()<br>
+    - (+)🟥벌레 터치 음악 종료 후 패배 음악 실행 playMusic()#playLoseMusic()
 
   - 🟥당근의 개수가 나옴 - viewCarrotCount()
 
     > 게임 시작 버튼 클릭 이후에 실행
 
-    - (+)0이 되면 게임 승리 resultGame()#winGame()
-    - (+)0이 되면 음악 실행 playMusic()#playWinMusic()
+    - (+)🟥0이 되면 게임 승리 resultGame()#winGame()
+    - (+)🟥0이 되면 음악 실행 playMusic()#playWinMusic()
 
   - ☑️타이머 시작 - ~~startTimer()~~<br>
     -> JS이해도 부족으로 함수화 및 클래스화 실패
     > 게임 시작 버튼 클릭 이후에 실행
-    - (+)0이 되면 게임 패배 resultGame()#loseGame()
-    - ☑️(+)0이 되면 음악 실행 musicControl(audio)#stopMusic()
+    - (+)🟥0이 되면 게임 패배 resultGame()#loseGame()
+    - (+)☑️0이 되면 음악 실행 musicControl(audio)#stopMusic()
 
 - ☑️음악 실행 - class musicCotrol : audio
 

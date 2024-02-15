@@ -119,12 +119,19 @@ button {
 .game__field {
   position: absolute;
   width: 100%;
-  height: 45%;
+  height: 60%;
   bottom: 0;
 }
 
-.game__field-carrot,
+.game__field-carrot {
+  position: absolute;
+  content: url("../images/carrot.png");
+  z-index: 5;
+}
 .game__field-bug {
+  position: absolute;
+  content: url("../images/bug.png");
+  z-index: 3;
 }
 
 /* result */
