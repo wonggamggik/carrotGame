@@ -4,6 +4,10 @@ class ingameInform {
     this.bugCount = bugCount;
     this.time = time;
   }
+
+  carrotMinus() {
+    this.carrotCount -= 1;
+  }
 }
 
 class musicControl {
@@ -84,6 +88,10 @@ const bug = document.querySelector(".game__field-bug");
 const carrotObj = new fieldMaker("game__field-carrot", 10);
 const bugObj = new fieldMaker("game__field-bug", 5);
 
+// Count
+const carrotCount = document.querySelector(".game__count-text");
+carrotCount.innerHTML = inform.carrotCount;
+
 const timeViwer = () => {
   time -= 1000;
   min = Math.floor(time / (60 * 1000));
@@ -118,6 +126,8 @@ const timeViwer = () => {
 field.addEventListener("click", (e) => {
   if (e.target.classList.value === "game__field-carrot") {
     playSoundEffect(audio__carrot);
+    inform.carrotMinus();
+    carrotCount.innerHTML = inform.carrotCount;
   }
 });
 

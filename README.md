@@ -24,7 +24,7 @@
   - 🟥게임 승리 - winGame()
   - 🟥게임 패배 - loseGame()
 
-- 🟥게임의 정보 - class ingameInform : carrotCount, bugCount, time
+- ☑️게임의 정보 - class ingameInform : carrotCount, bugCount, time
 
   1. carrotCount: 당근의 개수 지정함
   2. bugCount: 벌레의 개수를 지정함
@@ -34,7 +34,7 @@
 
     > 게임 시작 버튼 클릭 이후에 실행
 
-    - 🟥당근 선택 시 당근의 개수 view 1개씩 감소<br>
+    - ☑️당근 선택 시 당근의 개수 view 1개씩 감소<br>
     - (+)☑️당근 터치 시 음악 실행 playMusic()#playPickCarrot()
 
   - ☑️벌레가 정해진 공간안에 생성 - makeBug()
@@ -45,7 +45,7 @@
     - (+)🟥벌레 터치 시 음악 실행 playMusic()#playPickBug()<br>
     - (+)🟥벌레 터치 음악 종료 후 패배 음악 실행 playMusic()#playLoseMusic()
 
-  - 🟥당근의 개수가 나옴 - viewCarrotCount()
+  - ☑️당근의 개수가 나옴 - viewCarrotCount()
 
     > 게임 시작 버튼 클릭 이후에 실행
 
