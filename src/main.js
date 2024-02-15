@@ -1,3 +1,4 @@
+//  Class 모음
 // class onGame {
 //   constructor(status) {
 //     this.status = status;
@@ -49,6 +50,11 @@ class fieldMaker {
       const clientHeight = objImg.clientHeight;
       objImg.style.left = Math.random() * (fieldWidth - objWidth) + "px";
       objImg.style.top = Math.random() * (fieldHeight - clientHeight) + "px";
+
+      objImg.addEventListener("click", () => {
+        console.log("delete");
+        field.removeChild(objImg);
+      });
     }
   }
 
@@ -120,6 +126,9 @@ const timeViwer = () => {
     ).padStart(2, "0")}`;
     controlBGM(audio__alert);
     controlBGM(audio__bg);
+
+    const field = document.querySelector(".game__field");
+    field.innerHTML = "";
   }
 };
 
@@ -156,7 +165,7 @@ gameButton.addEventListener("click", (e) => {
   //
 });
 
-// function
+// function 모음
 // 게임이 시작할 때 BGM을 실행시키는 함수
 function controlBGM(sound) {
   const audioBg = new musicControl(sound);
